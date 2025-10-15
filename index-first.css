@@ -1,0 +1,48 @@
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: white;
+        font-family: sans-serif;
+    }
+
+/* Container menu */
+.menu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 2 kolom sejajar */
+  gap: 40px; /* jarak antar gambar */
+  padding: 100px;
+  justify-items: center; /* posisikan item di tengah kolom */
+}
+
+/* Setiap item menu */
+.menu-item {
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+  padding: 15px;
+  width: 100%;
+  max-width: 300px; /* batas lebar item */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* agar gambar proporsional */
+  border-radius: 10px;
+}
+
+.menu-item h3 {
+  margin-top: 10px;
+  color: #333;
+}
+
+.menu-item p {
+  color: #555;
+  font-weight: bold;
+  margin-top: 5px;
+}
