@@ -1,0 +1,530 @@
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+ 
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+  }
+
+  .content {
+    flex: 1;
+  }
+
+  .navbar {
+    background: #c31414ff;
+    padding: 15px 80px;
+  }
+
+  .logo {
+    margin-left: 100px; 
+    display: flex;
+    align-items: center;
+  }
+
+  .logo img {
+    width: 150px;
+    height: auto;
+  }
+
+  .nav-container {
+    display: flex;
+    align-items: center;       
+    justify-content: space-between;
+  }
+
+  .nav-menu {
+    display: flex;
+    gap: 80px;
+    list-style: none;
+    margin-left: -30px;
+  }
+
+  .nav-menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 40px;
+    
+  }
+
+  .nav-menu li a:hover {
+    color: #f4a261;
+  }
+
+  header {
+    background: white;
+    color: #333;
+    padding: 180px 40px;
+    text-align: center;
+  }  
+
+  header h1 {
+    font-size: 70px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 0;
+  }
+
+  header h2 {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    color: #444;
+  }
+
+  .next-section {
+    display: flex;
+    justify-content: center;
+    margin: 60px 0 40px;
+  }
+
+  .btn-next {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 36px;
+    background: linear-gradient(135deg, #c31414, #ff4d4d);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 999px; 
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(195,20,20,0.35);
+    transition: all 0.3s ease;
+  }
+
+  .btn-next:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 35px rgba(195,20,20,0.45);
+    background: linear-gradient(135deg, #a10f0f, #ff3333);
+  }
+
+  .btn-next:active {
+    transform: translateY(-1px);
+  }
+
+  footer {
+    margin-top: auto;
+    width: 100%;
+    background: #25262A;
+    color: #fff;
+    padding: 50px 20px;
+  }
+
+  .nav-overlay {
+    display: none;
+  }
+
+  .container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .container h3::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 50px;
+    background: #fff;
+    margin-top: 20px;
+  }
+
+  .container li a {
+    font-size: 30px;
+  }
+
+  .container li a:hover {
+    color: #976b0eff;
+    transition: all 0.5s ease;
+  }
+
+  .col-1 {
+    flex-basis: 30%;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  .col-1 img {
+    width: 55px;
+    margin-bottom: 15px;
+  }
+
+  .col-1 p {
+    color: #fff;
+    font-size: 30px;
+    line-height: 20px;
+  }
+
+  .col-2 {
+    flex-basis: 15%;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  .col-2 h3 {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .col-2 ul {
+    list-style: none;
+  }
+
+  .col-2 ul li {
+    margin-bottom: 10px;
+  }
+
+  .col-2 ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .about-header p {
+    font-size: 30px;
+  }
+
+  .about-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    padding: 60px 40px;
+  }
+
+  .card {
+    height: 420px;
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.2);
+  }
+
+  .card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+
+  .card-body {
+    padding: 16px;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .card-body h4 {
+    font-size: 30px;
+    margin-bottom: 6px;
+  }
+
+  .card-body p {
+    color: #777;
+  }
+
+  .header-penjelasan {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 80px 40px;   
+    max-width: 1400px;    
+    margin: auto;
+  }
+
+  #food-img {
+    width: 600px;       
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    flex-shrink: 0;     
+    margin-left: -40px;
+  }
+
+  .food-text {
+    flex: 1;
+  }
+
+  #food-name {
+    font-size: 50px;
+    margin-bottom: 12px;
+  }
+
+  #food-origin {
+    font-weight: 600;
+    font-size: 30px;
+    color: #777;
+    margin-bottom: 24px;
+  }
+
+  #food-desc {
+    font-size: 30px;
+    line-height: 1.9;
+    margin-bottom: 16px;
+    color: #333;
+  }
+
+  .menu-item p {
+    color: #555;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+
+  .nama-kelompok {
+    color: #fff;
+  }
+
+  .nama-kelompok h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    position: relative;
+  }
+
+  .nama-kelompok h3::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #f4a261;
+    margin-top: 6px;
+    border-radius: 2px;
+  }
+
+  .nama-kelompok ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nama-kelompok ul li {
+    margin-bottom: 8px;
+  }
+
+  .nama-kelompok ul li a {
+    color: #ddd;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .nama-kelompok ul li a::before {
+    content: "➤";
+    position: absolute;
+    left: -18px;
+    opacity: 0;
+    transition: 0.3s;
+    color: #f4a261;
+  }
+
+  .nama-kelompok ul li a:hover {
+    color: #f4a261;
+    padding-left: 5px;
+  }
+
+  .nama-kelompok ul li a:hover::before {
+    opacity: 1;
+  }
+
+  .footer-2{
+    width: 100%;
+    background: #25262A;
+    color: #fff;
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  .footer-2 p {
+    font-size: 20px;
+  }
+
+  .toggler-navbar {
+    display: none;
+    cursor: pointer;
+  }
+
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .hamburger-menu span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+  }
+
+  .joba-kontak {
+    display: flex;          
+    justify-content: center;
+    align-items: center;  
+    min-height: 100vh; 
+  }
+
+  .contact-form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 100%;
+  }
+
+  h2 {
+    margin-top: 0;
+    color: #333;
+    text-align: center;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  .error-message {
+    color: red;
+    font-size: 0.875rem;
+    display: none; 
+  }
+
+  .submit-button {
+    background-color: #a74628ff;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+  }
+
+  .submit-button:hover {
+    background-color: #886621ff;
+  }
+
+  @media (max-width: 768px) {
+      .navbar {
+        padding: 15px 20px;
+      }
+
+      header {
+        padding: 120px 20px;
+      }
+
+      header h1 {
+        font-size: 34px;
+      }
+
+      header h2 {
+        font-size: 18px;
+      }
+
+      .logo {
+        margin-left: 0;
+      }
+
+      .nav-container {
+        position: relative;
+      }
+
+      .toggler-navbar {
+        display: block;
+        z-index: 1001;
+      }
+
+      .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        height: 100vh;
+        background: #222;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        transition: right 0.4s ease;
+        z-index: 1000;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-menu li a {
+        font-size: 24px;
+      }
+
+      .nav-menu.active {
+        right: 0;
+      }
+
+      .nav-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.5);
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s;
+        z-index: 999;
+      }
+
+      .nav-overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .header-penjelasan {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    #food-img {
+      width: 100%;
+      max-width: 320px;
+      margin: auto;
+    }
+
+    .food-text {
+      margin-top: 20px;
+      text-align: left;
+    }
+
+  }
