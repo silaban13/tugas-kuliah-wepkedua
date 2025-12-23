@@ -34,11 +34,16 @@ const foods = {
   },
   "bolu": {
     name: "Bolu",
-    origin: "Belum Ada",
+    origin: "Inggrist & Belanda",
     img: "/img/kue-bolu.jpeg",
-    desc: "Belum Ada"
+    desc: "<p>Kue bolu berasal dari Eropa, khususnya dari tradisi kue sponge (sponge cake) di Inggrist dan Belanda.</p>  <p>Di indonesia, bolu di kenal luas karena pengaruh Belanda pada masa kolonial./p> Dari situlah muncul berbagai variasi bolu lokal seperti bolu kukus, bolu pandan, dan bolu tape.  "
   },
-
+  "pepeda": {
+    name: "Papeda",
+    origin: "Papua",
+    img: "/img/pepeda_nusantara.jpg",
+    desc: " <p>Papeda berasal dari Indonesia bagian timur terutama dari Papua dan Maluku.</p> Papeda adalah makanan tradisional yang terbuat dari sagu, dan biasanya dimakan dengan Ikan kuah kuning "
+  },
 }
 
 if (foods[food]) {

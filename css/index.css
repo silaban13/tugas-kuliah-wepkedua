@@ -11,13 +11,15 @@
     font-family: Arial, sans-serif;
   }
 
-  .content {
-    flex: 1;
-  }
-
   .navbar {
     background: #c31414ff;
     padding: 15px 80px;
+  }
+
+  .nav-container {
+    display: flex;
+    align-items: center;       
+    justify-content: space-between;
   }
 
   .logo {
@@ -31,12 +33,6 @@
     height: auto;
   }
 
-  .nav-container {
-    display: flex;
-    align-items: center;       
-    justify-content: space-between;
-  }
-
   .nav-menu {
     display: flex;
     gap: 80px;
@@ -48,32 +44,97 @@
     color: white;
     text-decoration: none;
     font-size: 40px;
-    
+    position: relative;
+  }
+
+  .nav-menu li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 3px;
+    background-color: #f4a261;
+    transition: width 0.3s ease;
+  }
+
+  .nav-menu li a:hover::after {
+    width: 100%;
   }
 
   .nav-menu li a:hover {
     color: #f4a261;
   }
 
-  header {
+  .toggler-navbar {
+    display: none;
+    cursor: pointer;
+  }
+
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .hamburger-menu span {
+    width: 25px;
+    height: 3px;
     background: white;
-    color: #333;
-    padding: 180px 40px;
+    border-radius: 2px;
+  }
+
+  .content {
+    position: relative;
+    min-height: 100vh;
+    background-image: url("/img/kuliner-makanan.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-  }  
+    color: white;
+    padding: 2rem;
+  }
+
+  .content::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+  }
+
+  .content > * {
+    position: relative;
+    z-index: 1;
+  }
+ 
+  header {
+    background: transparent;
+    color: white;
+    padding: 0;             
+    text-align: center;
+    max-width: 1500px;       
+  }
 
   header h1 {
-    font-size: 70px;
+    font-size: 60px;
     font-weight: bold;
     letter-spacing: 2px;
     margin: 0;
+    margin-bottom: 1rem;
   }
 
   header h2 {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: normal;
     margin-top: 10px;
-    color: #444;
+    color: #fff;
+    margin-bottom: 2.5rem;
   }
 
   .next-section {
@@ -107,6 +168,75 @@
     transform: translateY(-1px);
   }
 
+  .about {
+    min-height: 100vh;
+    padding: 60px 0;
+  }
+
+  .about-header {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 60px;
+  }
+
+  .about-header h1 {
+    color: black;
+  }
+
+  .about-header p {
+    font-size: 30px;
+    color: black;
+  }
+
+  .about-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 40px;
+    padding: 60px 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .card {
+    min-height: 420px;
+    height: auto;
+    background-color: white;
+  }
+
+  .card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.2);
+  }
+
+  .card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+
+  .card-body {
+    padding: 16px;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .card-body h4 {
+    font-size: 30px;
+    margin-bottom: 6px;
+    color: #252222ff;
+  }
+
+  .card-body p {
+    color: #252222ff;
+    font-size: 20px;
+  }
+
   footer {
     margin-top: auto;
     width: 100%;
@@ -115,9 +245,9 @@
     padding: 50px 20px;
   }
 
-  .nav-overlay {
+   .nav-overlay {
     display: none;
-  }
+  } 
 
   .container {
     width: 90%;
@@ -153,7 +283,7 @@
   }
 
   .col-1 img {
-    width: 55px;
+    width: 70px;
     margin-bottom: 15px;
   }
 
@@ -167,125 +297,58 @@
     flex-basis: 15%;
     padding: 10px;
     margin-bottom: 20px;
+    color: #fff;
   }
 
   .col-2 h3 {
-    color: #fff;
-    font-size: 20px;
+    font-size: 30px;
     margin-bottom: 15px;
+    position: relative;
+  }
+
+  .col-2 h3::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #f4a261;
+    margin-top: 6px;
+    border-radius: 2px;
+  }
+
+  .col-2 ul li a::before {
+    content: "➤";
+    position: absolute;
+    left: -18px;
+    opacity: 0;
+    transition: 0.3s;
+    color: #f4a261;
   }
 
   .col-2 ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
   }
 
   .col-2 ul li {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 
   .col-2 ul li a {
-    color: #fff;
+    color: #ddd;
     text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
   }
 
-  .about-header p {
-    font-size: 30px;
+   .col-2 ul li a:hover {
+    color: #f4a261;
+    padding-left: 5px;
   }
 
-  .about-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 40px;
-    padding: 60px 40px;
-  }
-
-  .card {
-    height: 420px;
-    background: #fff;
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .card a {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-  }
-
-  .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 30px rgba(0,0,0,0.2);
-  }
-
-  .card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-  }
-
-  .card-body {
-    padding: 16px;
-    text-align: center;
-    margin-top: 30px;
-  }
-
-  .card-body h4 {
-    font-size: 30px;
-    margin-bottom: 6px;
-  }
-
-  .card-body p {
-    color: #777;
-  }
-
-  .header-penjelasan {
-    display: flex;
-    align-items: flex-start;
-    gap: 40px;
-    padding: 80px 40px;   
-    max-width: 1400px;    
-    margin: auto;
-  }
-
-  #food-img {
-    width: 600px;       
-    height: auto;
-    border-radius: 20px;
-    object-fit: cover;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    flex-shrink: 0;     
-    margin-left: -40px;
-  }
-
-  .food-text {
-    flex: 1;
-  }
-
-  #food-name {
-    font-size: 50px;
-    margin-bottom: 12px;
-  }
-
-  #food-origin {
-    font-weight: 600;
-    font-size: 30px;
-    color: #777;
-    margin-bottom: 24px;
-  }
-
-  #food-desc {
-    font-size: 30px;
-    line-height: 1.9;
-    margin-bottom: 16px;
-    color: #333;
-  }
-
-  .menu-item p {
-    color: #555;
-    font-weight: bold;
-    margin-top: 5px;
+  .col-2 ul li a:hover::before {
+    opacity: 1;
   }
 
   .nama-kelompok {
@@ -293,7 +356,7 @@
   }
 
   .nama-kelompok h3 {
-    font-size: 20px;
+    font-size: 30px;
     margin-bottom: 15px;
     position: relative;
   }
@@ -343,6 +406,62 @@
     opacity: 1;
   }
 
+  .header-penjelasan {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 80px 40px;   
+    max-width: 1400px;    
+    margin: auto;
+  }
+
+  #food-img {
+    width: 600px;       
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    flex-shrink: 0;     
+    margin-left: -40px;
+  }
+
+  .food-text {
+    flex: 1;
+  }
+
+  .food-text h1 {
+    color: black;
+  }
+
+  .food-text p {
+    color: black;
+  }
+
+  #food-name {
+    font-size: 50px;
+    margin-bottom: 12px;
+  }
+
+  #food-origin {
+    font-weight: 600;
+    font-size: 30px;
+    color: #fff;
+    margin-bottom: 24px;
+  }
+
+  #food-desc {
+    font-size: 30px;
+    line-height: 1.9;
+    margin-bottom: 16px;
+    color: #151313ff;
+  }
+
+  .menu-item p {
+    color: #555;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+ 
   .footer-2{
     width: 100%;
     background: #25262A;
@@ -355,29 +474,16 @@
     font-size: 20px;
   }
 
-  .toggler-navbar {
-    display: none;
-    cursor: pointer;
-  }
-
-  .hamburger-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-
-  .hamburger-menu span {
-    width: 25px;
-    height: 3px;
-    background: white;
-    border-radius: 2px;
+  .contact {
+    min-height: 100vh;
+    padding: 60px 0;
   }
 
   .joba-kontak {
-    display: flex;          
+    min-height: calc(100vh - 120px);
+    display: flex;
     justify-content: center;
-    align-items: center;  
-    min-height: 100vh; 
+    align-items: center;
   }
 
   .contact-form-container {
@@ -442,76 +548,78 @@
   }
 
   @media (max-width: 768px) {
-      .navbar {
-        padding: 15px 20px;
-      }
+    .navbar {
+      padding: 15px 20px;
+    }
 
-      header {
-        padding: 120px 20px;
-      }
+    header {
+      padding: 110px 10px;
+    }
 
-      header h1 {
-        font-size: 34px;
-      }
+    header h1 {
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
 
-      header h2 {
-        font-size: 18px;
-      }
+    header h2 {
+      font-size: 10px;
+      margin-bottom: 2rem;
+    }
 
-      .logo {
-        margin-left: 0;
-      }
+    .logo {
+      margin-left: 0;
+    }
 
-      .nav-container {
-        position: relative;
-      }
+    .nav-container {
+      position: relative;
+    }
 
-      .toggler-navbar {
-        display: block;
-        z-index: 1001;
-      }
+    .toggler-navbar {
+      display: block;
+      z-index: 1001;
+    }
 
-      .nav-menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 75%;
-        height: 100vh;
-        background: #222;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-        transition: right 0.4s ease;
-        z-index: 1000;
-        margin: 0;
-        padding: 0;
-      }
+    .nav-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 75%;
+      height: 100vh;
+      background: #222;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      transition: right 0.4s ease;
+      z-index: 1000;
+      margin: 0;
+      padding: 0;
+    }
 
-      .nav-menu li a {
-        font-size: 24px;
-      }
+    .nav-menu li a {
+      font-size: 24px;
+    }
 
-      .nav-menu.active {
-        right: 0;
-      }
+    .nav-menu.active {
+      right: 0;
+    }
 
-      .nav-overlay {
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,0.5);
-        opacity: 0;
-        visibility: hidden;
-        transition: 0.3s;
-        z-index: 999;
-      }
+    .nav-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.3s;
+      z-index: 999;
+    }
 
-      .nav-overlay.active {
-        opacity: 1;
-        visibility: visible;
-      }
+    .nav-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
 
-      .header-penjelasan {
+    .header-penjelasan {
       flex-direction: column;
       text-align: center;
     }
@@ -525,6 +633,32 @@
     .food-text {
       margin-top: 20px;
       text-align: left;
+    }
+
+    .about-header h1 {
+      font-size: 30px;
+    }
+
+    .about-header h2 {
+      font-size: 10px;
+    }
+
+    .about-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      padding: 40px 16px;
+    }
+
+    .card {
+      width: 100%;
+      min-height: 420px;
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
     }
 
   }
